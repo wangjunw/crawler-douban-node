@@ -49,5 +49,10 @@ const sleep = time =>
         return list;
     });
     browser.close();
+    // 拿到结果
     console.log(result);
+
+    // 发送结果并退出进程，在子进程脚本中接收
+    process.send({ result });
+    process.exit(0);
 })();
