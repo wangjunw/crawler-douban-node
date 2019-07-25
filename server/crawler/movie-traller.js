@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 // 详情页
 const base = `https://movie.douban.com/subject/`;
 const doubanId = '24773958';
+// 视频的链接
 const videoBase = `https://movie.douban.com/trailer/230072/`;
 const sleep = time =>
     new Promise(resolve => {
@@ -26,13 +27,13 @@ const sleep = time =>
         let it = $('.related-pic-video');
         if (it && it.length > 0) {
             let link = it.attr('href'); // 连接
-            let coverImg = it
+            let trallerImg = it
                 .css('background-image')
                 .replace('url("', '')
-                .replace(')"', ''); // 图片
+                .replace('?")', ''); // 图片
             return {
                 link,
-                coverImg
+                trallerImg
             };
         }
 
@@ -59,10 +60,10 @@ const sleep = time =>
     const data = {
         video,
         doubanId,
-        coverImg: result.coverImg
+        trallerImg: result.trallerImg
     };
 
     browser.close();
-    process.send({ data });
+    process.send(data);
     process.exit(0);
 })();
