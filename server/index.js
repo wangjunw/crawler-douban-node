@@ -7,8 +7,8 @@ const mongoose = require('mongoose');
     await connect();
     // 初始化所有schema
     initSchemas();
-    //require('./tasks/movie-list');
-    require('./tasks/douban-api');
+    //require('./tasks/movie-list'); //爬取电影列表
+    require('./tasks/douban-api'); //通过豆瓣api获取电影详情
 })();
 const app = new Koa();
 app.use(async (ctx, next) => {
