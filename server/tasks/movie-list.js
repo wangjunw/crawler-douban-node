@@ -1,5 +1,10 @@
+/**
+ * 爬取电影数据任务，并存库
+ */
 const cp = require('child_process');
 const { resolve } = require('path');
+const mongoose = require('mongoose');
+const Movie = mongoose.model('Movie');
 
 (async () => {
     // 获取到脚本
@@ -27,5 +32,14 @@ const { resolve } = require('path');
     childProcess.on('message', data => {
         let result = data.result;
         console.log(result);
+        // 把结果存储到数据库
+        result.forEach(async item => {
+            let movie = await Movie.findOne({ doubanId: item.doubanId });
+            // 判断如果没有电影信息则存库
+            if (!movie) {
+                movie = new Movie(item);
+                await movie.save();
+            }
+        });
     });
 })();

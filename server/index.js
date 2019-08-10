@@ -7,9 +7,8 @@ const mongoose = require('mongoose');
     await connect();
     // 初始化所有schema
     initSchemas();
-    const Movie = mongoose.model('Movie');
-    const movies = await Movie.find({});
-    console.log(movies);
+    //require('./tasks/movie-list');
+    require('./tasks/douban-api');
 })();
 const app = new Koa();
 app.use(async (ctx, next) => {

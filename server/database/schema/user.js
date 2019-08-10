@@ -36,7 +36,7 @@ const userSchema = new Schema({
 userSchema.virtual('isLocked').get(() => {
     return !!(this.lockUntil && this.lockUntil > Date.now());
 });
-userSchema.pre('save', next => {
+userSchema.pre('save', function(next) {
     if (this.isNew) {
         this.meta.createdAt = this.meta.updateddAt = Date.now();
     } else {
@@ -44,7 +44,7 @@ userSchema.pre('save', next => {
     }
     next();
 });
-userSchema.pre('save', next => {
+userSchema.pre('save', function(next) {
     if (!this.isModified('password')) return next();
     // 密码加密
     Bcrypt.genSalt(SALT_WORK_FACTORY, (err, salt) => {

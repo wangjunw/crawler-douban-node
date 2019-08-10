@@ -4,14 +4,17 @@ const { Mixed, ObjectId } = Schema.Types;
 
 const movieSchema = new Schema({
     doubanId: String,
-    category: {
-        type: ObjectId,
-        ref: 'Category'
-    },
+    category: [
+        {
+            type: ObjectId,
+            ref: 'Category'
+        }
+    ],
     rate: Number,
     title: String,
     summary: String,
     video: String,
+    picLink: String,
     videoKey: String,
     posterKey: String,
     coverKey: String,
@@ -33,7 +36,7 @@ const movieSchema = new Schema({
         }
     }
 });
-movieSchema.pre('save', next => {
+movieSchema.pre('save', function(next) {
     if (this.isNew) {
         this.meta.createdAt = this.meta.updateddAt = Date.now();
     } else {

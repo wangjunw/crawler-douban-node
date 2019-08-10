@@ -30,6 +30,7 @@ exports.connect = () => {
             console.log(err);
         });
         mongoose.connection.once('open', () => {
+            resolve();
             console.log('mongodb connect success!');
         });
     });
