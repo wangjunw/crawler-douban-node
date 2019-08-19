@@ -1,6 +1,6 @@
 const Koa = require('koa');
 const { connect, initSchemas } = require('./database/init');
-const router = require('./routes');
+const router = require('./routes/movie');
 (async () => {
     // 连接数据库
     await connect();
