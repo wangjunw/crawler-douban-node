@@ -1,4 +1,4 @@
-# movie-trailer-node
+# crawler-douban-node
 
 1. 利用 puppeteer 实现简单的爬虫，并利用豆瓣的 api 补全电影的详情
 
