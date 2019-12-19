@@ -1,33 +1,31 @@
 {
-    "name": "movie-trailer-node",
-    "version": "1.0.0",
-    "description": "电影预告片网站，用于学习",
-    "main": "server/index.js",
-    "scripts": {
-        "start": "nodemon server/index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/wangjunw/movie-trailer-node.git"
-    },
-    "keywords": [
-        "node"
-    ],
-    "author": "junweiw",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/wangjunw/movie-trailer-node/issues"
-    },
-    "homepage": "https://github.com/wangjunw/movie-trailer-node#readme",
-    "dependencies": {
-        "bcrypt": "^3.0.6",
-        "glob": "^7.1.4",
-        "koa": "^2.7.0",
-        "koa-router": "^7.4.0",
-        "mongoose": "^5.6.8",
-        "puppeteer": "^1.18.1",
-        "request": "^2.88.0",
-        "request-promise-native": "^1.0.7"
-    }
+  "name": "crawler-douban-node",
+  "version": "1.0.0",
+  "description": "爬取豆瓣数据并存库，用于学习",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangjunw/movie-trailer-node.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "junweiw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangjunw/movie-trailer-node/issues"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "glob": "^7.1.4",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "mongoose": "^5.6.8",
+    "puppeteer": "^1.18.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
+  }
 }
