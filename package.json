@@ -19,7 +19,7 @@
     "url": "https://github.com/wangjunw/movie-trailer-node/issues"
   },
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "glob": "^7.1.4",
     "koa": "^2.7.0",
     "koa-router": "^7.4.0",
